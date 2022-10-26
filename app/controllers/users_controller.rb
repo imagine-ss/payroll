@@ -15,6 +15,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # def complete_profile
+  # end
+
   # GET /users/1/edit
   # def edit
   # end

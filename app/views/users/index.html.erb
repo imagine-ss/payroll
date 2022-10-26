@@ -1,14 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>Welcome, <%= current_user.first_name %></h1>
 
-<div id="controllers">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this controller", user %>
-    </p>
-  <% end %>
-</div>
+<% if is_profile_complete? %>
+  <h2>Nice. You profile is now complete</h2>  
+<% else %>
+  <%= link_to "Please complete profile", users_complete_profile_path %>
+<% end %>
+<br>
 
-<%= link_to "New User", new_user_registration_path %>
+<%= link_to "Log Out", destroy_user_session_path, method: :delete %>

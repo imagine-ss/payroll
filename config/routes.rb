@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     registrations: "registrations"
   }
 
+  get "users/complete_profile", to: "users#complete_profile"
+
 end
