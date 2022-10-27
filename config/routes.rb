@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     registrations: "registrations"
   }
 
-  get "users/complete_profile/:id", to: "users#edit"
-  post "users/complete_profile/:id", to: "users#update"
+  # get "users/complete_profile/:id", to: "users#edit"
+  # post "users/complete_profile/:id", to: "users#update"
 
 end

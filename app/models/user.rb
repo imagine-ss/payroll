@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   belongs_to :role
 
-  validates_presence_of :first_name, :last_name, :date_of_birth, :country, :phone_number, :address, :gender
+  validates_presence_of :first_name, :last_name, :date_of_birth, :phone_number, :address, :gender, :is_profile_complete
 end
