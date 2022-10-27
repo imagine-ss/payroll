@@ -27,11 +27,16 @@
     <%= f.text_field :address, class: "form-control" %>
   </div>
 
-  <p>
-  <%= f.label :gender, class: "form-label" %><br />
-    <%= f.radio_button :gender, "male" %><br>
-    <%= f.radio_button :gender, "female" %><br>
-  </p>
+  <%= f.label :gender, class: "form-label" %>
+  <div class="form-check">
+    <%= f.radio_button :gender, "male", class: "form-check-input" %>
+    <%= f.label "Male", class: "form-check-label" %>
+  </div>
+  <div class="form-check">
+    <%= f.radio_button :gender, "female", class: "form-check-input" %>
+    <%= f.label "Female", class: "form-check-label" %>
+  </div>
+  <br>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
