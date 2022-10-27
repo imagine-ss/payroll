@@ -28,6 +28,9 @@ gem "cssbundling-rails", "~> 1.1"
 
 gem "jsbundling-rails", "~> 1.0"
 
+gem 'shrine', '~> 3.3'
+
+gem 'image_processing', '~> 1.12', '>= 1.12.1'
 
 
 group :development, :test do

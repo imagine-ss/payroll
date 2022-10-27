@@ -32,14 +32,15 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
+      t.string :avatar_url, default: "https://res.cloudinary.com/dbskfmbc8/image/upload/v1666859865/avataaars_bxvqp3.png"
       t.string :first_name
       t.string :last_name
       t.datetime :date_of_birth
-      t.string :country
+      t.string :country, default: "south sudan"
       t.string :phone_number
       t.string :address
-      t.string :role, default: "user"
+      t.string :gender
+      t.boolean :is_profile_complete, default: false
 
 
       t.timestamps null: false
