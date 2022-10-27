@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_27_084934) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "avatar_url", default: "https://res.cloudinary.com/dbskfmbc8/image/upload/v1666859865/avataaars_bxvqp3.png"
+    t.string "avatar_url", default: "https://res.cloudinary.com/dbskfmbc8/image/upload/v1666867711/avataaars_1_wnljzy.png"
     t.string "first_name"
     t.string "last_name"
     t.datetime "date_of_birth"

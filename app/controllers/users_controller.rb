@@ -15,18 +15,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def complete_profile
-    # respond_to do |format|
-    #   if @user.update(user_params)
-    #     format.html { redirect_to user_url(@user), notice: "user was successfully updated." }
-    #     format.json { render :show, status: :ok, location: @user }
-    #   else
-    #     format.html { render :edit, status: :unprocessable_entity }
-    #     format.json { render json: @user.errors, status: :unprocessable_entity }
-    #   end
-    # end
-  end
-
   # GET /users/1/edit
   def edit
   end
@@ -72,7 +60,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find_by(email: current_user.email)
+      @user = User.find(params[:id])
     end
 
     def user_params

@@ -1,6 +1,49 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400&display=swap');
+
 body, html {
+  font-family: 'Lexend Deca', sans-serif;
   background-color: #f4f3f6;
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.main-body {
+  display: grid;
+  grid-template-columns: 18% 78%;
+  grid-gap: 4%;
+}
+
+.right-side-nav {
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+.right-side-nav .top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 10px;
+}
+
+.right-side-nav .top-nav img {
+  width: 25%;
+  height: 100%;
+}
+
+.nav-links li {
+  padding: 10px 0;
+}
+
+#logout-link {
+  margin: 15px 10px;
 }
