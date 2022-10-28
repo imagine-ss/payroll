@@ -4,9 +4,9 @@ class CreateTransactions < ActiveRecord::Migration[7.0]
     create_table :transactions, id: :uuid, default: 'gen_random_uuid()' do |t|
       t.decimal :amount
       t.string :description
-      t.string :paying_to
+      t.string :payed_by
       t.boolean :is_credit, default: true
-      t.datetime :date_of_transaction, default: DateTime.now
+      t.datetime :date_of_transaction
       t.references :user, type: :uuid, null: false, foreign_key: true
 
       t.timestamps

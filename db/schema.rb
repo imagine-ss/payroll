@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_28_084602) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_28_082901) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
-
-  create_table "balances", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.decimal "amount"
-    t.uuid "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_balances_on_user_id"
-  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name", default: "user"
@@ -32,9 +24,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_28_084602) do
   create_table "transactions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.decimal "amount"
     t.string "description"
-    t.string "paying_to"
+    t.string "payed_by"
     t.boolean "is_credit", default: true
-    t.datetime "date_of_transaction", default: "2022-10-28 08:37:34"
+    t.datetime "date_of_transaction"
     t.uuid "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,7 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_28_084602) do
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
-  add_foreign_key "balances", "users"
   add_foreign_key "transactions", "users"
   add_foreign_key "users", "roles"
 end
