@@ -9,9 +9,9 @@
 
   <section class="nav-links">
     <ul>
-      <a href="/"><li>Home</li></a>
+      <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Profile", user_path(current_user) %></li>
-      <a href="#"><li>Transactions</li></a>
+      <li><%= link_to "Transactions", transactions_path %></li>
       <a href="#"><li>Invoices</li></a>
     </ul>
   </section>

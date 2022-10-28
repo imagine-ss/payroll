@@ -1,4 +1,6 @@
-<% current_user.transactions.order(created_at: :desc).limit(5).each do |t| %>
+<br>
+<h1>All Transactions</h1>
+<% @transactions.each do |t| %>
   <section class="current-transactions">
     <section class="main-content">
       <section class="reason-date">
@@ -11,7 +13,3 @@
     </section>
   </section>
 <% end %>
-<br>
-<section class="view-all-btn">
-  <%= link_to "View All", transactions_path %>
-</section>
