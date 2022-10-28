@@ -7,7 +7,7 @@ module ApplicationHelper
     @transactions.each do |t|
       @balance += t.amount
     end
-    
+
     @balance
   end
 end

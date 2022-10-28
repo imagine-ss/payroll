@@ -1,10 +1,11 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400&display=swap");
 
-body, html {
-  font-family: 'Lexend Deca', sans-serif;
+body,
+html {
+  font-family: "Lexend Deca", sans-serif;
   background-color: #f4f3f6;
   margin: 0;
   height: 100%;
@@ -49,16 +50,35 @@ li {
 }
 
 .current-balance {
+  margin-top: 50px;
+}
+
+.current-balance,
+.current-transactions > .main-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.current-transactions > .main-content {
+  background-color: #fafafa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.current-transactions > .main-content:hover {
+  background-color: #e7f5f5;
+}
+
 .current-balance {
+  height: 120px;
+}
+
+.current-balance,
+.current-transactions {
   background-color: #ffffff;
   border: 1px solid rgb(240, 240, 240);
-  width: 40%;
-  padding: 20px;
-  height: 120px;
+  width: 45%;
   border-radius: 5px;
+  padding: 20px;
 }

@@ -1,0 +1,17 @@
+<% current_user.transactions.order(created_at: :desc).limit(5).each do |t| %>
+  <section class="current-transactions">
+    <section class="main-content">
+      <section class="reason-date">
+      <h5><%= t.description.capitalize %></h5>
+      <small><%= t.created_at%></small>
+      </section>
+      <section class="amount">
+        <h4>$<%= t.amount%></h4>
+      </section>
+    </section>
+  </section>
+<% end %>
+<br>
+<section class="view-all-btn">
+  <%= link_to "View All" %>
+</section>
