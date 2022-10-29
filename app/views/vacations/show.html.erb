@@ -1,10 +1,13 @@
+<br>
 <p style="color: green"><%= notice %></p>
 
-<%= render @vacation %>
-
+<div class="white-bg-card">
+  <%= render @vacation %>
+</div>
+<br>
 <div>
-  <%= link_to "Edit this vacation", edit_vacation_path(@vacation) %> |
-  <%= link_to "Back to vacations", vacations_path %>
-
-  <%= button_to "Destroy this vacation", @vacation, method: :delete %>
+  <%= link_to "Edit this leave", edit_vacation_path(@vacation) %> |
+  <%= link_to "Back to requests", vacations_path %>
+  <p></p>
+  <%= button_to "Delete this request", @vacation, class: "btn btn-danger", method: :delete %>
 </div>

@@ -11,6 +11,7 @@
       <b>Country:</b> <%= user.country.titleize %><br>
       <b>Phone Number:</b> <%= user.phone_number %><br>
       <b>Gender:</b> <%= user.gender.capitalize %><br>
+      <b>Tax:</b> <%= user.tax * 100 %>%<br>
       <b>Gross Salary:</b> $<%= user.gross_salary %>/annum<br>
       <% tax = (user.tax * user.gross_salary) %>
       <% net_salary = user.gross_salary - tax  %>

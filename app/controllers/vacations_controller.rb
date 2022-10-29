@@ -25,7 +25,7 @@ class VacationsController < ApplicationController
 
     respond_to do |format|
       if @vacation.save
-        format.html { redirect_to vacation_url(@vacation), notice: "Vacation was successfully created." }
+        format.html { redirect_to vacation_url(@vacation), notice: "Leave was successfully requested." }
         format.json { render :show, status: :created, location: @vacation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class VacationsController < ApplicationController
   def update
     respond_to do |format|
       if @vacation.update(vacation_params)
-        format.html { redirect_to vacation_url(@vacation), notice: "Vacation was successfully updated." }
+        format.html { redirect_to vacation_url(@vacation), notice: "Leave was successfully updated." }
         format.json { render :show, status: :ok, location: @vacation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class VacationsController < ApplicationController
     @vacation.destroy
 
     respond_to do |format|
-      format.html { redirect_to vacations_url, notice: "Vacation was successfully destroyed." }
+      format.html { redirect_to vacations_url, notice: "Leave was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -65,6 +65,6 @@ class VacationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vacation_params
-      params.require(:vacation).permit(:start_date, :end_date, :vacation_days, :reason, :user_id)
+      params.require(:vacation).permit(:start_date, :end_date, :vacation_days, :reason).merge(user_id: current_user.id)
     end
 end

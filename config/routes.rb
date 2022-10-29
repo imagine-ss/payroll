@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :vacations
+  
   root "users#index"
 
   devise_for :users, :controllers => {
@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :transactions
+
+  resources :vacations
 
 end

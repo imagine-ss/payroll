@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_29_071738) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_29_071941) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -46,7 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_29_071738) do
     t.string "phone_number"
     t.string "address"
     t.string "gender"
-    t.boolean "is_profile_complete", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "role_id", null: false
@@ -58,11 +57,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_29_071738) do
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
-  create_table "vacations", force: :cascade do |t|
+  create_table "vacations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "vacation_days"
     t.text "reason"
+    t.string "status", default: "pending"
     t.uuid "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
