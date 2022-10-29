@@ -3,7 +3,23 @@ class VacationsController < ApplicationController
 
   # GET /vacations or /vacations.json
   def index
-    @vacations = Vacation.all
+    @vacations = current_user.vacations.order(created_at: :desc)
+
+    if current_user.role_id == 2
+      @requests = Vacation.all
+    end
+  end
+
+  def pending_requests
+    @pending_requests = Vacation.where(status: "pending")
+  end
+
+  def approved_requests
+    @approved_requests = Vacation.where(status: "approved")
+  end
+
+  def cancelled_requests
+    @cancelled_requests = Vacation.where(status: "cancelled")
   end
 
   # GET /vacations/1 or /vacations/1.json

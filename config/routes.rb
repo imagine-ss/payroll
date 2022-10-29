@@ -12,4 +12,10 @@ Rails.application.routes.draw do
 
   resources :vacations
 
+  get "pending", to: "vacations#pending_requests"
+
+  get "approved", to: "vacations#approved_requests"
+
+  get "cancelled", to: "vacations#cancelled_requests"
+
 end

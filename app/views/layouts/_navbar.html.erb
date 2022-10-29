@@ -13,6 +13,9 @@
       <li><%= link_to "Profile", user_path(current_user) %></li>
       <li><%= link_to "Transactions", transactions_path %></li>
       <li><%= link_to "Leave(s)", vacations_path %></li>
+      <% if is_user_admin? %><li><%= link_to "Approved", approved_path %></li><% end %>
+      <% if is_user_admin? %><li><%= link_to "Pending", pending_path %></li><% end %>
+      <% if is_user_admin? %><li><%= link_to "Cancelled", cancelled_path %></li><% end %>
     </ul>
   </section>
   <section id="logout-link">

@@ -10,4 +10,8 @@ module ApplicationHelper
 
     @balance
   end
+
+  def is_user_admin?
+    current_user.role_id == 2 ? true : false
+  end
 end
