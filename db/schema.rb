@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_28_134341) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_29_071738) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -50,11 +50,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_28_134341) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "role_id", null: false
+    t.string "job_title"
+    t.decimal "gross_salary"
+    t.decimal "tax"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
+  create_table "vacations", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "vacation_days"
+    t.text "reason"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_vacations_on_user_id"
+  end
+
   add_foreign_key "transactions", "users"
   add_foreign_key "users", "roles"
+  add_foreign_key "vacations", "users"
 end

@@ -1,6 +1,20 @@
 <div id="<%= dom_id user %>">
-  <p>
-    <%= user.first_name %>
-  </p>
-
+  <div class="user-details">
+    <h2>
+      <%= user.first_name.capitalize + " " + user.last_name.capitalize %>
+    </h2>
+    <hr>
+    <section>
+      <b>Job Title:</b> <%= user.job_title.titleize %><br>
+      <b>Email:</b> <%= user.email %><br>
+      <b>Address:</b> <%= user.address %><br>
+      <b>Country:</b> <%= user.country.titleize %><br>
+      <b>Phone Number:</b> <%= user.phone_number %><br>
+      <b>Gender:</b> <%= user.gender.capitalize %><br>
+      <b>Gross Salary:</b> $<%= user.gross_salary %>/annum<br>
+      <% tax = (user.tax * user.gross_salary) %>
+      <% net_salary = user.gross_salary - tax  %>
+      <b>Net Salary:</b> $<%= net_salary %>/annum
+    </section>
+  </div>
 </div>

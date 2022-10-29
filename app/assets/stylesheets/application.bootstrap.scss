@@ -63,7 +63,7 @@ li {
 .current-transactions > .main-content {
   background-color: #fafafa;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .current-transactions > .main-content:hover {
@@ -76,7 +76,8 @@ li {
 }
 
 .current-balance,
-.current-transactions {
+.current-transactions,
+.user-details {
   background-color: #ffffff;
   border: 1px solid rgb(240, 240, 240);
   width: 45%;

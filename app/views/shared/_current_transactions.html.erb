@@ -1,4 +1,4 @@
-<% current_user.transactions.order(created_at: :desc).limit(5).each do |t| %>
+<% current_user.transactions.order(created_at: :desc).limit(3).each do |t| %>
   <section class="current-transactions">
     <section class="main-content">
       <section class="reason-date">
