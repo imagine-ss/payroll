@@ -1,4 +1,18 @@
+<br>
 <h1>Pending Requests</h1>
-<% @pending_requests.each do |r| %>
-  <%= r.reason %>
+
+<% if @pending_requests.size > 0 %>
+  <div class="white-bg-card">
+    <% @pending_requests.each do |vacation| %>
+      <%= render vacation %>
+      <p>
+        <%= link_to "Show this leave", vacation %>
+        <hr>
+      </p>
+    <% end %>
+  </div>
+<% else %>
+  <h4>There are no pending leave requests at the moment</h4>
 <% end %>
+<br>
+<br>

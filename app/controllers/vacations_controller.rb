@@ -81,6 +81,6 @@ class VacationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vacation_params
-      params.require(:vacation).permit(:start_date, :end_date, :vacation_days, :reason).merge(user_id: current_user.id)
+      params.require(:vacation).permit(:start_date, :end_date, :vacation_days, :reason, :status).merge(user_id: current_user.id)
     end
 end

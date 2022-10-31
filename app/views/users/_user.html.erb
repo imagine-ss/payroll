@@ -5,7 +5,7 @@
     </h2>
     <hr>
     <section>
-      <b>Job Title:</b> <%= user.job_title.titleize %><br>
+      <% if !user.job_title.nil? %><b>Job Title:</b> <%= user.job_title.titleize %><br><% end %>
       <b>Email:</b> <%= user.email %><br>
       <b>Address:</b> <%= user.address %><br>
       <b>Country:</b> <%= user.country.titleize %><br>

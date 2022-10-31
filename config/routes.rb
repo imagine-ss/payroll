@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  post "users/new", to: "users#create"
+
   resources :transactions
 
   resources :vacations

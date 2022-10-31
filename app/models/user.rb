@@ -10,6 +10,6 @@ class User < ApplicationRecord
 
   has_many :vacations
 
-  validates_presence_of :first_name, :last_name, :date_of_birth, :phone_number, :address, :gender
+  validates_presence_of :email, :first_name, :last_name, :job_title, :gross_salary, :date_of_birth, :phone_number, :address, :gender, :password, :password_confirmation, :role_id
 
 end

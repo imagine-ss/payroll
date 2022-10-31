@@ -2,7 +2,14 @@
 
 <%= render @user %>
 <br>
-<div>
-  <%= link_to "Edit this user", edit_user_registration_path(@user) %> |
-  <%= link_to "Back to home", root_path %>
-</div>
+
+<% if current_user.id == @user.id %>
+  <div>
+    <%= link_to "Edit", edit_user_registration_path(@user) %> |
+    <%= link_to "Back", root_path %>
+  </div>
+<% else %>
+  <div>
+    <%= link_to "Back", root_path %>
+  </div>
+<% end %>

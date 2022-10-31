@@ -1,13 +1,19 @@
 <br>
+<h1>Leave Details</h1>
 <p style="color: green"><%= notice %></p>
 
 <div class="white-bg-card">
   <%= render @vacation %>
 </div>
 <br>
-<div>
-  <%= link_to "Edit this leave", edit_vacation_path(@vacation) %> |
-  <%= link_to "Back to requests", vacations_path %>
-  <p></p>
-  <%= button_to "Delete this request", @vacation, class: "btn btn-danger", method: :delete %>
-</div>
+<% request_owner = current_user.id == @vacation.user_id %>
+<% if request_owner %>
+  <div>
+    <%= link_to "Edit this leave", edit_vacation_path(@vacation) %> |
+    <%= link_to "Back to requests", vacations_path %>
+    <p></p>
+    <%= button_to "Delete this request", @vacation, class: "btn btn-danger", method: :delete %>
+  </div>
+<% else %>
+  <%= link_to "Edit this leave", edit_vacation_path(@vacation) %>
+<% end %>

@@ -1,6 +1,7 @@
 <br>
 <h1>All Transactions</h1>
-<% @transactions.each do |t| %>
+<% if @transactions.size > 0 %>
+  <% @transactions.each do |t| %>
   <section class="current-transactions">
     <section class="main-content">
       <section class="reason-date">
@@ -9,7 +10,10 @@
       </section>
       <section class="amount">
         <h4>$<%= t.amount%></h4>
+        </section>
       </section>
     </section>
-  </section>
+  <% end %>
+<% else %>
+  <h4>You do not have any transactions right now.</h4>
 <% end %>

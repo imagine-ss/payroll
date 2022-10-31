@@ -2,10 +2,18 @@
 
 <h1>Welcome, <%= current_user.first_name.capitalize %></h1>
 
-<%= render "shared/current_balance" %>
+<% if !is_user_admin? %>
+  <%= render "shared/current_balance" %>
+  <br>
+  <br>
 
-<br>
-
-<%= render "shared/current_transactions" %>
+  <% if @transactions.size > 0 %>
+    <%= render "shared/current_transactions" %>
+  <% else %>
+    <h4>You do not have any transactions right now.</h4>
+  <% end %>
+<% else %>
+  <%= render "shared/admin_dashboard" %>
+<% end %>
 
 <br> 
