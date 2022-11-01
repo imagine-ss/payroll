@@ -1,12 +1,12 @@
 <div id="<%= dom_id vacation %>">
   <p>
     <strong>Start date:</strong>
-    <%= vacation.start_date %>
+    <%= date_formatter(vacation.start_date) %>
   </p>
 
   <p>
     <strong>End date:</strong>
-    <%= vacation.end_date %>
+    <%= date_formatter(vacation.end_date) %>
   </p>
 
   <p>

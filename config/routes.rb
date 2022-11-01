@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :transactions
 
+  post "transactions/new", to: "transactions#create"
+
   resources :vacations
 
   get "pending", to: "vacations#pending_requests"

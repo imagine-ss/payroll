@@ -14,4 +14,8 @@ module ApplicationHelper
   def is_user_admin?
     current_user.role_id == 2 ? true : false
   end
+
+  def date_formatter(d)
+    d.strftime("%d/%m/%y")
+  end
 end

@@ -1,2 +1,9 @@
-<h1>Transactions#show</h1>
-<p>Find me in app/views/transactions/show.html.erb</p>
+<h1>Transaction Details</h1>
+
+<div class="white-bg-card">
+  <section>
+    <h4><%= @transaction.description %></h4>
+    <small><%= @transaction.amount %></small><br>
+    <small><%= date_formatter(@transaction.created_at) %></small>
+  </section>
+</div>
