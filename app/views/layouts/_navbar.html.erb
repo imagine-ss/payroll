@@ -17,6 +17,11 @@
       <% if is_user_admin? %><li><%= link_to "Pending", pending_path %></li><% end %>
       <% if is_user_admin? %><li><%= link_to "Approved", approved_path %></li><% end %>
       <% if is_user_admin? %><li><%= link_to "Cancelled", cancelled_path %></li><% end %>
+      <% if is_user_admin? %>
+        <li><%= link_to "Appraisals", appraisals_path %></li>
+      <% else %>
+        <li><%= link_to "Appraisals", user_appraisals %></li>
+      <% end %>
     </ul>
   </section>
   <section id="logout-link">

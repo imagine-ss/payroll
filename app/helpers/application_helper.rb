@@ -18,4 +18,17 @@ module ApplicationHelper
   def date_formatter(d)
     d.strftime("%d/%m/%y")
   end
+
+  def user_appraisals
+    @appraisals = Appraisal.all
+    @user_appraisal = [] 
+
+    @appraisals.each do |a|
+      if a.employee_email == current_user.email
+        @user_appraisal.push(a)
+      end
+    end
+
+    @user_appraisal
+  end
 end

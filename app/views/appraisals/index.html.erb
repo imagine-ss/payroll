@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Appraisals</h1>
+
+<div id="appraisals">
+  <% @appraisals.each do |appraisal| %>
+    <%= render appraisal %>
+    <p>
+      <%= link_to "Show this appraisal", appraisal %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New appraisal", new_appraisal_path %>

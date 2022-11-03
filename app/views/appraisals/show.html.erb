@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @appraisal %>
+
+<% if is_user_admin? %>
+  <div class="mb-3">
+    <%= link_to "Edit this appraisal", edit_appraisal_path(@appraisal) %> |
+    <%= link_to "Back to appraisals", appraisals_path %>
+    <br>
+    <br>
+    <%= button_to "Destroy this appraisal", @appraisal, method: :delete, class: "btn btn-danger" %>
+  </div>
+<% else %>
+  <div class="mb-3">
+    <%= link_to "Back to appraisals", user_appraisals %>
+    <br>
+    <br>
+  </div>
+<% end %>

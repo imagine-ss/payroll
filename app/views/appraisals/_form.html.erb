@@ -1,0 +1,47 @@
+<%= form_with(model: appraisal) do |form| %>
+  <% if appraisal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(appraisal.errors.count, "error") %> prohibited this appraisal from being saved:</h2>
+
+      <ul>
+        <% appraisal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+  <div class="mb-3">
+    <%= form.label "Enter employee email", class: "form-label" %>
+    <%= form.text_field :employee_email, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :collaboration, class: "form-label" %>
+    <%= form.text_area :collaboration, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :work_ethic, class: "form-label" %>
+    <%= form.text_area :work_ethic, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :problem_solving, class: "form-label" %>
+    <%= form.text_area :problem_solving, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :decision_making, class: "form-label" %>
+    <%= form.text_area :decision_making, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :communication, class: "form-label" %>
+    <%= form.text_area :communication, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
